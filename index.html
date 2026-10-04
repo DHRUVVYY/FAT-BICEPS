@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    
+<title> FAT BICEPS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+   
+    <div id="videoModal" class="video-modal-overlay">
+      <video id="adVideo" class="modal-video" autoplay muted loop playsinline preload="metadata">
+          <source src="ad.mp4" type="video/mp4">
+        <source src="ad.webm" type="video/webm">
+        
+      </video>
+      <div class="video-modal-controls">
+        <button id="drinkMilkBtn" class="drink-milk-btn"> Drink Milk to Continue</button>
+        <button id="nahGoodBtn" class="nah-good-btn" type="button">Nah, I'm good ❌🤓</button>
+      </div>
+    </div>
+    
+    
+<nav class="sidebar" aria-label="Main navigation">
+<a href="#builder" class="logo">
+     FAT BICEPS</a>
+<p class="nav-caption"></p>
+<a class="nav-link" href="#builder">
+    <span>01</span> Workout builder</a>
+<a class="nav-link" href="#muscle-map">
+    <span>02</span> Muscle selection</a>
+<a class="nav-link" href="#routine">
+    <span>03</span> My routine</a>
+<a class="nav-link" href="#demos">
+    <span>04</span> Demonstrations</a>
+<a class="nav-link" href="#guide">
+    <span>05</span> How to use</a>
+<p class="sidebar-note">
+‎ ‎ ‎     </p>
+
+
+
+<div class="sidebar-footer">
+  <p class="muted"></p>
+  
+  
+  <div class="credits">
+      <p>  ‎ ‎ ‎   ↓ ↓ ↓ ↓ </p>
+      <br>
+      
+    <a href="#creditsModal" id="creditsLink">HOLOFORGE</a>
+    <br>
+    <br>
+    <p>‎ ‎ ‎  ↑ ↑ ↑ ↑ </pr>
+  </div>
+</div>
+
+
+<div id="creditsModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span id="closeCredits" class="close-btn">&times;</span>
+    
+    <img src="holo.jpg" alt="Workout Diagram" class="exercise-img">
+        <br>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Click Here to Visit Website</a>
+        <br>
+        <br>
+        
+        <p> CREDITS: DIGVIJAY AND DHRUV</p>
+        <br>
+       <P> INSPIRATION : SHUBHAM SIR </P>
+        
+   
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</nav>
+<main id="builder">
+<header class="intro">
+    <p class="eyebrow">WORKOUT BUILDER</p>
+    <h1>Choose your next move.</h1>
+    <p>Select equipment and muscle groups to explore exercises.</p>
+    
+    
+   
+    
+</header>
+<div class="workspace">
+<section class="map-card" id="muscle-map">
+    <div class="section-top">
+        <div>
+            <p class="eyebrow">02 / MUSCLES</p>
+            <h2>Select muscle groups</h2>
+        </div>
+        <span class="legend">● Selected</span>
+    </div>
+    <p class="muted">Tap a label to select. Tap again to remove.</p>
+    <div class="figures">
+        <section class="figure-panel">
+            <h3>Front</h3>
+            <div class="body-map front-map" aria-label="front muscle selection"><img src="front.jpg" alt="Front view of the supplied character artwork">
+                <button type="button" id="shoulders" class="muscle shoulders" aria-pressed="false" onclick="toggleMuscle('shoulders')">Shoulders</button>
+                <button type="button" id="chest" class="muscle chest" aria-pressed="false" onclick="toggleMuscle('chest')">Chest</button>
+                <button type="button" id="biceps" class="muscle biceps" aria-pressed="false" onclick="toggleMuscle('biceps')">Biceps</button>
+                <button type="button" id="forearms" class="muscle forearms" aria-pressed="false" onclick="toggleMuscle('forearms')">Forearms</button>
+                <button type="button" id="abs" class="muscle abs" aria-pressed="false" onclick="toggleMuscle('abs')">Abs</button>
+            <button type="button" id="quads" class="muscle quads" aria-pressed="false" onclick="toggleMuscle('quads')">Quads</button>
+            
+            </div>
+        </section>
+        <section class="figure-panel">
+            <h3>Back</h3>
+            <div class="body-map back-map" aria-label="back muscle selection">
+                <img src="back.jpg" alt="Back view of the supplied character artwork">
+                    <button type="button" id="upperback" class="muscle chest" aria-pressed="false" onclick="toggleMuscle('upperback')">Upper back</button>
+                    <button type="button" id="triceps" class="muscle biceps" aria-pressed="false" onclick="toggleMuscle('triceps')">Triceps</button>
+                    <button type="button" id="lats" class="muscle abs" aria-pressed="false" onclick="toggleMuscle('lats')">Lats</button>
+                    <button type="button" id="glutes" class="muscle hips" aria-pressed="false" onclick="toggleMuscle('glutes')">Glutes</button>
+                    <button type="button" id="hamstrings" class="muscle quads" aria-pressed="false" onclick="toggleMuscle('hamstrings')">Hamstrings</button>
+                <button type="button" id="calves" class="muscle calves" aria-pressed="false" onclick="toggleMuscle('calves')">Calves</button>
+            </div>
+        </section>
+    </div>
+   
+</section>
+<aside class="settings">
+    <p class="eyebrow">01 / EQUIPMENT</p>
+    <h2>What do you have?</h2>
+    <label for="equipment">Available equipment</label>
+    <select id="equipment"><option value="none">Bodyweight only</option>
+        <option value="dumbbell">Dumbbells + bodyweight</option><option value="band">Band + bodyweight</option>
+    </select>
+    <div class="selection-box">
+        <p class="eyebrow">SELECTED MUSCLES</p>
+        <p id="selection">Nothing selected yet.</p>
+    </div>
+    <button id="buildButton" class="primary" type="button">Find exercises ↗</button>
+    <button id="resetButton" class="secondary" type="button">Reset selection</button>
+    <p id="status" role="status"></p>
+    <p class="note"></p>
+</aside>
+</div>
+<section id="routine" class="routine">
+    <div class="section-top">
+        <div><p class="eyebrow">03 / YOUR EXERCISES</p>
+            <h2>Your exercise shortlist</h2>
+        </div>
+        <button id="clearButton" class="secondary" type="button">Clear routine</button>
+    </div>
+    <p class="muted"> </p>
+    <div id="exerciseList" class="exercise-grid">
+    </div>
+</section>
+<section id="demos" class="guide">
+    <p class="eyebrow">04 / DEMONSTRATIONS</p>
+    <h2>Find an exercise video</h2>
+    
+    <div id="videoLinks" class="video-links">
+    </div>
+</section>
+<section id="guide" class="guide">
+    <h2>How to use</h2>
+    <ol>
+        <li>Choose the equipment available to you.</li>
+        <li>Select one or more muscle labels on the front or back image.</li>
+        <li>Press Find exercises, then remove anything you don't want to keep.</li>
+    </ol>
+    
+</section>
+</main>
+
+<footer class="footer">
+    <img src="ce.png" alt="Footer Logo1" class="footer-img">
+        
+        <img src="bi.jpg" alt="Footer Logo2" class="footer-img">
+            
+            <img src="cne.jpg" alt="Footer Logo3" class="footer-img">
+                
+                <img src="ort.jpg" alt="Footer Logo4" class="footer-img">
+    
+    
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
